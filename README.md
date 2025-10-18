@@ -149,18 +149,16 @@ A modern, responsive Next.js frontend for managing auto parts inventory with rea
 - npm or yarn
 - Backend API running on `http://localhost:4000`
 
-### Installation
+### Local Installation
 
 ```bash
 # 1. Clone repository
 git clone <repo-url>
-cd frontend
+cd project folder
 
 # 2. Install dependencies
 npm install
 
-# 3. Create environment file
-cp .env.example .env.local
 
 # 4. Update API URL in .env.local
 NEXT_PUBLIC_API_URL=http://localhost:4000/api
@@ -253,16 +251,18 @@ frontend/
 
 ## 🐳 Docker Setup
 
-### Build Docker Image
+### Build in Docker
 
-```bash
-docker build -t auto-parts-frontend:latest .
-```
+GO PROJECT FOLDER and RUN BELLOW COMMAND
 
 ### Run Docker Container
 
+Before starting the frontend, make sure the backend are running.
+
 ```bash
 # Start all services (backend, frontend, database)
+docker compose build --no-cache
+
 docker-compose up -d
 
 
