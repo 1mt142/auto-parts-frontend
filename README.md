@@ -149,7 +149,7 @@ A modern, responsive Next.js frontend for managing auto parts inventory with rea
 - npm or yarn
 - Backend API running on `http://localhost:4000`
 
-### Local Installation
+### Local Installation (Or See Docker Build in the bellow)
 
 ```bash
 # 1. Clone repository
@@ -251,6 +251,9 @@ frontend/
 
 ### Build in Docker
 
+git clone Project
+cd Project
+
 GO PROJECT FOLDER and RUN BELLOW COMMAND
 
 ### Run Docker Container
@@ -273,7 +276,7 @@ docker-compose down
 
 ## 🔄 API Integration
 
-### Base URL
+### Backend Base URL
 
 ```
 
@@ -363,25 +366,6 @@ POST /auth/refresh { refreshToken }
 | `/login`       | CSR       | No auth required         |
 | `/register`    | CSR       | No auth required         |
 | `/dashboard/*` | CSR       | Protected, user-specific |
-
----
-
-## 🧪 Testing
-
-### Build Test
-
-```bash
-npm run build
-```
-
-### Production Start
-
-```bash
-npm run build
-npm start
-```
-
----
 
 ## 📊 Performance Optimizations
 
