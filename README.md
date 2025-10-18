@@ -249,8 +249,6 @@ frontend/
 
 ---
 
-## 🐳 Docker Setup
-
 ### Build in Docker
 
 GO PROJECT FOLDER and RUN BELLOW COMMAND
@@ -264,6 +262,8 @@ Before starting the frontend, make sure the backend are running.
 docker compose build --no-cache
 
 docker-compose up -d
+
+Visit : http://localhost:3000/
 
 
 # Stop all services
