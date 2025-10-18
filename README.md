@@ -262,28 +262,12 @@ docker build -t auto-parts-frontend:latest .
 ### Run Docker Container
 
 ```bash
-docker run -d \
-  --name auto_parts_web \
-  -p 3000:3000 \
-  -e NEXT_PUBLIC_API_URL=http://localhost:4000/api \
-  auto-parts-frontend:latest
-```
-
-### Docker Compose (Full Stack)
-
-```bash
 # Start all services (backend, frontend, database)
 docker-compose up -d
 
-# View logs
-docker logs -f auto_parts_web
 
 # Stop all services
 docker-compose down
-
-# Remove all volumes
-docker-compose down -v
-```
 
 ---
 
@@ -292,12 +276,15 @@ docker-compose down -v
 ### Base URL
 
 ```
+
 http://localhost:4000/api
+
 ```
 
 ### Authentication Flow
 
 ```
+
 1. User logs in → POST /auth/login
    ↓
 2. Backend returns tokens (accessToken, refreshToken)
@@ -305,13 +292,14 @@ http://localhost:4000/api
 3. Tokens saved to:
    - Zustand store (client state)
    - Cookies (server state)
-   ↓
+     ↓
 4. API interceptor attaches JWT to all requests
    ↓
 5. On 401 error → Auto-refresh token
    ↓
 6. On refresh fail → Redirect to /login
-```
+
+````
 
 ### Key Endpoints
 
@@ -349,7 +337,7 @@ POST /auth/login { email, password }
 
 // 4. Middleware checks cookies on dashboard access
 // 5. API interceptor uses Zustand token
-```
+````
 
 ### Token Refresh
 
@@ -379,18 +367,6 @@ POST /auth/refresh { refreshToken }
 ---
 
 ## 🧪 Testing
-
-### Type Checking
-
-```bash
-npm run type-check
-```
-
-### Linting
-
-```bash
-npm run lint
-```
 
 ### Build Test
 
@@ -437,55 +413,6 @@ npm start
 4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Open Pull Request
 
----
-
-## 📝 License
-
-This project is licensed under the MIT License - see LICENSE file for details.
-
----
-
-## 📧 Support
-
-For issues or questions:
-
-- Create an issue on GitHub
-- Email: support@autoparts.com
-- Documentation: https://autoparts.dev/docs
-
----
-
-## 🚀 Deployment
-
-### Vercel (Recommended for Next.js)
-
-```bash
-npm install -g vercel
-vercel
-```
-
-### Docker Deployment
-
-```bash
-# Build image
-docker build -t auto-parts-frontend:latest .
-
-# Push to registry
-docker push your-registry/auto-parts-frontend:latest
-
-# Deploy with Docker Compose
-docker-compose -f docker-compose.prod.yml up -d
-```
-
-### Environment for Production
-
-```bash
-NEXT_PUBLIC_API_URL=https://api.autoparts.com
-NODE_ENV=production
-```
-
----
-
 ## 🎉 Key Features Checklist
 
 - [x] User authentication (login/register)
@@ -507,16 +434,3 @@ NODE_ENV=production
 - [x] Form validation
 
 ---
-
-## 📞 Contact & Links
-
-- **GitHub**: [Repository URL]
-- **Live Demo**: [Deployment URL]
-- **Backend API**: [API Documentation]
-- **Issues**: [GitHub Issues]
-
----
-
-**Made with ❤️ by the Auto Parts Team**
-
-_Last Updated: October 2024_
